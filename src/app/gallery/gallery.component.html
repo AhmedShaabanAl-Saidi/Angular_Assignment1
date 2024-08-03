@@ -35,12 +35,18 @@
                 </div>
             </div>
 
-            <div class="recommended-products d-flex justify-content-center align-items-center rounded-2 my-5" #recommended>
+            <div class="recommended-products d-flex justify-content-center align-items-center rounded-2" #recommended>
                 <h2 class="display-6 fw-bold text-uppercase pt-3 text-white">recommended component</h2>
             </div>
 
             @defer (on hover(recommended)) {
                 <app-recommended-products></app-recommended-products>
+            }
+            @placeholder {
+                <h2 class="mb-5 text-capitalize">hover to display recommended products <i class="fa-solid fa-hand-pointer"></i></h2>
+            }
+            @loading (minimum 2000ms){
+                <h2 class="mb-5 text-capitalize">loading.....</h2>
             }
         </div>
     </div>
